@@ -1,0 +1,7 @@
+<h1>New Product</h1>
+
+<%# render 'shared/components/form-default', object: @product, remote: true %>
+
+<%= default_form_for(@product, {remote: true}) %>
+
+<%= link_to 'Back', products_path %>

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
-gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -23,14 +22,21 @@ gem 'uglifier'
 gem 'simple_form_extension'
 
 
-# oauth gems
+# user related gems
+gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'pundit'
 
 # google gems
 gem 'geocoder'
 gem 'gmaps4rails'
 
+# mailer
+gem 'letter_opener', group: :development
+
+# search
+gem "algoliasearch-rails"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'

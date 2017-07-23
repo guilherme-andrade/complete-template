@@ -10,8 +10,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <%= render 'shared/components/navbar' %>
+    <%= render 'shared/components/flashes' %>
     <%= yield %>
     <%= yield(:before_js) %>
     <%= javascript_include_tag 'application' %>

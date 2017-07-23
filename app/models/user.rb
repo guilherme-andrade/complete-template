@@ -4,26 +4,30 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  has_many :base_models
-
-  BaseModel::DATA_KEYS.each do |method|
-    define_method(method) do
-    base_models.find_by_data_key(method).try(:data_value)
-  end
-
-  # setter method
-  define_method("#{method}=") do |value|
-    data = accounts.find_or_initialize_by_data_key(method)
-    data.data_value = value.strip
-    data.save
-  end
-end
+  has_many :products
 
 
-
+  # Geocoding
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+
+  # Mailing
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
+
+  # Algolia search
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :email, :first_name, :last_name
+  end
+
+  # Oauth Facebook
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -45,7 +49,7 @@ end
     return user
   end
 
-
+  # Oauth Google+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first

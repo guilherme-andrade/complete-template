@@ -20,17 +20,24 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'simple_form_extension'
-
+gem 'bootstrap_form'
 
 # user related gems
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'pundit'
+gem 'spina'
 
 # google gems
 gem 'geocoder'
 gem 'gmaps4rails'
+
+# attachments
+gem 'cloudinary'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+
 
 # mailer
 gem 'letter_opener', group: :development
@@ -53,3 +60,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'

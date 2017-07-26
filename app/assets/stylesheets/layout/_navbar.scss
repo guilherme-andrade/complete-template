@@ -1,0 +1,67 @@
+.navbar-fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  .fa {
+  font-size: $navbar-icons-size;
+}
+}
+
+.navbar-search-form {
+  max-width: 100% !important;
+  display: flex !important;
+}
+
+.navbar-dropdown-menu {
+  padding: $navbar-icons-padding;
+  margin: auto;
+  position: fixed;
+  top: $navbar-height;
+}
+
+.navbar-search-input {
+  margin: $navbar-input-padding;
+  font-size: 18px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  margin-right: 0 !important;
+  .form-control {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .input-group-addon {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &:focus {
+    border: none !important;
+  }
+}
+
+nav div ul {
+display: table;
+width: 100%;
+list-style: none;
+margin-bottom: 0;
+  .nav-btn {
+    display: table-cell;
+    text-align: center;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+nav div ul li {
+
+}
+nav div ul li a {
+display: block;
+padding: $navbar-link-padding;
+}
+
+nav div div i {
+display: block;
+padding: $navbar-link-padding;
+}

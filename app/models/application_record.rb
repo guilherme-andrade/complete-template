@@ -15,4 +15,8 @@ class ApplicationRecord < ActiveRecord::Base
   def unpermitted_attributes
     ["id", "created_at", "updated_at"]
   end
+
+  def order_attributes
+
+  end
 end

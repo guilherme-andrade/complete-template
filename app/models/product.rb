@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :product_features
   has_many :features, through: :product_features
+  has_attachment :photo
+
 
   serialize :tags
 

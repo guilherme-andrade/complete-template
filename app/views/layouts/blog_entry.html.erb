@@ -1,0 +1,45 @@
+
+<%# LAYOUT USED FOR PAGES CONTROLLER %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+  <body>
+
+    <%= render 'shared/flashes' %>
+
+    <div class="blog-entry-navbar">
+      <%= yield :navbar %>
+    </div>
+
+    <%# enables the banner if variable is true %>
+    <% if @enable_banner %>
+      <div class="blog-entry-banner">
+        <%= yield :banner %>
+      </div>
+    <% end %>
+    <div class="wrapper
+      <% if @enable_banner %>
+        <%= 'blog-entry-content' %>
+      <% else %>
+        <% 'blog-entry-content-simple' %>
+      <% end %>">
+      <div class="container">
+        <%= yield :content %>
+      </div>
+       <div class="footer">
+        <%= yield :footer %>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
+  </body>
+</html>

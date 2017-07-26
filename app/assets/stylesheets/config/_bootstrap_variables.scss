@@ -1,4 +1,13 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+// Google fonts
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:200,400,300,700|Raleway:400,100,300,700,500");
+$base-font: "Work Sans", "Helvetica", "sans-serif";
+$header-font: "Raleway", "Helvetica", "sans-serif";
 $bootstrap-sass-asset-helper: false !default;
+
+
 //
 // Variables
 // --------------------------------------------------
@@ -43,8 +52,8 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:  $header-font;
+$font-family-serif:       $base-font;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
@@ -67,8 +76,8 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
-$headings-line-height:    1.1 !default;
+$headings-font-weight:    200 !default;
+$headings-line-height:    1.4 !default;
 $headings-color:          inherit !default;
 
 
@@ -361,8 +370,12 @@ $container-lg:                 $container-large-desktop !default;
 //
 //##
 
+$navbar-height:                    70px;
+$navbar-logo-width:                60px;
+$navbar-icons-size:                24px;
+$sub_navbar-height: 50px; // change
+
 // Basics of a navbar
-$navbar-height:                    100px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
@@ -454,11 +467,11 @@ $nav-pills-active-link-hover-color:         $component-active-color !default;
 
 $pagination-color:                     $link-color !default;
 $pagination-bg:                        $body-bg !default;
-$pagination-border:                    $gray !default;
+$pagination-border:                    $gray-lighter !default;
 
 $pagination-hover-color:               $link-hover-color !default;
 $pagination-hover-bg:                  $gray-lighter !default;
-$pagination-hover-border:              $gray !default;
+$pagination-hover-border:              $gray-lighter !default;
 
 $pagination-active-color:              $body-bg !default;
 $pagination-active-bg:                 $brand-primary !default;
@@ -466,7 +479,7 @@ $pagination-active-border:             $brand-primary !default;
 
 $pagination-disabled-color:            $gray-light !default;
 $pagination-disabled-bg:               $body-bg !default;
-$pagination-disabled-border:           $gray !default;
+$pagination-disabled-border:           $gray-lighter !default;
 
 
 //== Pager
@@ -714,11 +727,11 @@ $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         $border-radius-base !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          $gray !default;
+$panel-inner-border:          $gray-lighter !default;
 $panel-footer-bg:             darken($body-bg, 10%) !default;
 
 $panel-default-text:          $gray-dark !default;
-$panel-default-border:        $gray !default;
+$panel-default-border:        $gray-lighter !default;
 $panel-default-heading-bg:    darken($body-bg, 10%) !default;
 
 $panel-primary-text:          $body-bg !default;
@@ -751,7 +764,7 @@ $thumbnail-padding:           4px !default;
 //** Thumbnail background color
 $thumbnail-bg:                $body-bg !default;
 //** Thumbnail border color
-$thumbnail-border:            $gray !default;
+$thumbnail-border:            $gray-lighter !default;
 //** Thumbnail border radius
 $thumbnail-border-radius:     $border-radius-base !default;
 

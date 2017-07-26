@@ -1,0 +1,29 @@
+.blog-entry-navbar {
+  height: $navbar-height;
+}
+
+.blog-entry-banner {
+  height: $blog-entry-banner-height;
+  position: absolute;
+  top: $navbar-height;
+  background-color: black; // change
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+// content position options
+.blog-entry-content {
+  position: absolute;
+  top: $blog-entry-content-position;
+  width: 100%;
+  justify-content: center;
+  bottom: $footer-height;
+  background-color: gray; // change
+  height: 1400px;
+}
+
+.blog-entry-content-simple { // simple is used when there's no banner
+  position: absolute;
+  top: $navbar-height;
+}

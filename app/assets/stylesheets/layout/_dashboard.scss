@@ -1,0 +1,122 @@
+// left section content options
+.dashboard-content-left {
+  position: fixed;
+  height: $dashboard-content-left-height;
+  overflow-y: scroll;
+  bottom: $dashboard-content-left-bottom-position;
+  padding: 0;
+  z-index: -1;
+}
+
+.dashboard-content-left-no-cta {
+  position: fixed;
+  height: $dashboard-content-right-height;
+  overflow-y: scroll;
+  bottom: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+.dashboard-content-left-no-sub_navbar {
+  position: fixed;
+  height: $dashboard-content-left-height-no-sub_navbar;
+  overflow-y: scroll;
+  bottom: $dashboard-content-left-bottom-position;
+  padding: 0;
+  z-index: -1;
+}
+
+.dashboard-content-left-simple { // simple is for only with main navbar, no cta
+  position: fixed;
+  height: $dashboard-content-height-simple;
+  overflow-y: scroll;
+  bottom: 0;
+  padding: 0;
+  z-index: -1;
+  top: $navbar-height;
+}
+
+.dashboard-content-left-bottom-cta {
+  position: fixed;
+  bottom: 0;
+  height: $dashboard-cta-height;
+  padding: 0;
+  z-index: -1;
+
+}
+
+.dashboard-content-left-bottom-cta:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 1px;
+  width: 75%;  /* or 100px */
+  border-bottom: 1px solid $gray-lighter;
+}
+
+@media(max-width:1200px){
+
+  .dashboard-content-left {
+    width: 100% !important;
+  }
+
+  .dashboard-content-left-no-cta {
+    width: 100% !important;
+  }
+
+  .dashboard-content-left-no-sub_navbar {
+    width: 100% !important;
+  }
+
+  .dashboard-content-left-simple {
+    width: 100% !important;
+  }
+
+  .dashboard-content-left-bottom-cta {
+    width: 100% !important;
+  }
+
+  .dashboard-content-left-bottom-cta:before {
+    width: 100% !important;
+  }
+}
+
+// right section class options
+.dashboard-content-right {
+  position: fixed;
+  height: $dashboard-content-right-height;
+  right: 0;
+  overflow: hidden;
+  bottom: 0;
+  background-color: $gray-lighter;
+  padding: 0;
+  z-index: -1;
+}
+
+.dashboard-content-right-simple {
+  position: fixed;
+  height: $dashboard-content-height-simple;
+  right: 0;
+  overflow: hidden;
+  bottom: 0;
+  background-color: $gray-lighter;
+  padding: 0;
+  z-index: -1;
+  top: $navbar-height
+}
+
+.dashboard-sub_navbar {
+  position: fixed;
+  top: $navbar-height;
+  background-color: $gray-lighter;
+}
+
+.dashboard-sub_navbar {
+  position: fixed;
+  top: $navbar-height;
+  width: 100%;
+  height: $sub_navbar-height;
+  z-index: -1;
+}
+

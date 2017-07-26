@@ -1,0 +1,75 @@
+
+<%# LAYOUT USED FOR HOTEL SHOW WHEN BOOKING, ALL PROFILES SHOW AND EDIT %>
+
+<%# missing one more conditional for subnavbar %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= yield :head %>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+  </head>
+  <body>
+
+    <%= render 'shared/flashes' %>
+
+    <div class="show-navbar">
+      <%= yield :navbar %>
+    </div>
+
+    <%# enables the subnavbar if variable is true %>
+    <% if @enable_sub_navbar %>
+      <div class="show-sub_navbar">
+        <%= yield :sub_navbar %>
+      </div>
+    <% end %>
+
+    <%# enables the banner if variable is true %>
+    <% if @enable_banner %>
+      <div class="
+      <% if @enable_sub_navbar %>
+        <%= 'show-banner-with-sub_navbar' %>
+      <% else %>
+        <%= 'show-banner' %>
+      <% end %>">
+        <%= yield :banner %>
+      </div>
+    <% end %>
+    <div class="wrapper
+      <% if @enable_banner %>
+        <% if @enable_sub_navbar %>
+          <%= 'show-content-with-sub_navbar' %>
+        <% else %>
+          <%= 'show-content' %>
+        <% end %>
+      <% else %>
+        <% if @enable_sub_navbar %>
+          <%= 'show-content-simple-with-sub_navbar' %>
+        <% else %>
+          <%= 'show-content-simple' %>
+        <% end %>
+      <% end %>">
+      <div class="container">
+
+        <div class="col-lg-8 col-xs-12 show-content-left">
+          <%= yield :content_left %>
+        </div>
+
+        <div class="col-lg-4 col-xs-12 show-content-right">
+          <%= yield :content_right %>
+        </div>
+      </div>
+      <div class="footer">
+        <%= yield :footer %>
+      </div>
+    </div>
+
+
+
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
+</body>

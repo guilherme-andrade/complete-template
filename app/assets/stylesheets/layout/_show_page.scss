@@ -1,0 +1,88 @@
+.show-navbar {
+  height: $navbar-height;
+}
+
+.show-sub_navbar {
+  height: $sub_navbar-height;
+  position: absolute;
+  top: $navbar-height;
+  width: 100%;
+}
+
+.show-banner {
+  height: $show-banner-height;
+  position: absolute;
+  top: $navbar-height;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.show-banner-img {
+  height: $show-banner-height;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background-size: cover;
+  padding: 0;
+}
+
+.show-banner-with-sub_navbar {
+  height: $show-banner-height;
+  position: absolute;
+  top: $navbar-height + $sub_navbar-height;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background-size: cover;
+}
+
+// content position options
+.show-content {
+  position: absolute;
+  top: $show-content-position;
+  width: 100%;
+  justify-content: center;
+  bottom: $footer-height;
+}
+
+.show-content-with-sub_navbar {
+  position: absolute;
+  top: $show-content-position-with-sub_navbar;
+  width: 100%;
+  justify-content: center;
+  bottom: $footer-height;
+}
+
+.show-content-simple { // simple is used when there's no banner
+  position: absolute;
+  top: $navbar-height;
+}
+
+.show-content-simple-with-sub_navbar {
+  position: absolute;
+  top: $navbar-height + $sub_navbar-height;
+}
+
+
+// left section content options
+.show-content-left {
+  height: 700px; // change
+  padding: 0;
+}
+
+
+// right section class options
+.show-content-right {
+  overflow: hidden;
+  height: 700px; // change
+  padding: 0;
+}
+
+.show-content-right-simple { // simple is used when there's no banner
+  overflow: hidden;
+  padding: 0;
+}
